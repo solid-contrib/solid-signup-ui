@@ -1,0 +1,12 @@
+{
+    "name": "Solid",
+    "lang": "en",
+    "start_url": "./",
+    "icons": [
+        {"src": "assets/img/solid-logo.png",
+         "sizes": "any",
+         "type": "image/png"
+        }
+    ],
+    "display": "standalone"
+}
