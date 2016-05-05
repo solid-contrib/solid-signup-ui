@@ -1,0 +1,134 @@
+h1 {
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+}
+
+.onboarding-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #F6F8FA;
+}
+
+@media (min-width: 768px) {
+    .onboarding-container {
+        width: 700px;
+        height: 500px;
+        border-radius: 3px;
+    }
+}
+
+.onboarding-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.onboarding-card {
+    height: auto;
+    text-align: center;
+}
+
+.onboarding-card h1 {
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #547190;
+    text-align: center;
+}
+
+.onboarding-card p {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    text-align: center;
+    max-width: 75%;
+    margin: auto;
+    color: #A2B1C1;
+}
+
+@media (min-width: 768px) {
+    .onboarding-card h1 br {
+        display: none;
+    }
+
+    .onboarding-card p {
+        max-width: 60%;
+    }
+}
+
+.onboarding-control-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F6F8FA;
+}
+
+.onboarding-control-panel p {
+    padding: 0px;
+}
+
+.onboarding-control-panel .steps {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.onboarding-control-panel .steps .swiper-pagination-bullet {
+    display: block;
+    height: 6px;
+    width: 6px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.onboarding-control-panel .steps .swiper-pagination-bullet-active {
+    background-color: #547190;
+}
+
+.onboarding-control-panel .control-btn {
+    background: none;
+    background-color: transparent;
+    border: 0px;
+    color: #673AB7;
+    font-size: 0.8em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    padding: 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.onboarding-control-panel .onboarding-done {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+    background-color: #673AB7;
+    margin-bottom: 0px;
+}
+
+.onboarding-control-panel #control-btn-done {
+    width: 100%;
+    height: 100%;
+    padding: 18px;
+    display: none;
+    color: white;
+}

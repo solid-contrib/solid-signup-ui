@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sign Up | Solid</title>
+        <title>Solid</title>
         <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="theme-color" content="#673AB7">
@@ -10,51 +10,68 @@
         <link rel="stylesheet" href="assets/css/swiper.min.css">
         <link rel="stylesheet" href="assets/css/solid-theme.css">
         <link rel="stylesheet" href="assets/css/solid-signup.css">
+        <link rel="stylesheet" href="assets/css/solid-onboarding.css">
         <link rel="manifest" href="manifest.json">
     </head>
     <body>
-
-        <section class="signup-pane">
-
-        </section>
-        <section class="showoff-pane">
-            <h1>Access to stunning decentralized <br> Web apps powered by Solid.</h1>
-            <img src="assets/img/nexus6.png" width="400" alt="">
-        </section>
-        <section class="overlay">
-            <div class="swiper-container modal">
-                <div class="swiper-wrapper modal-content">
-                    <div class="swiper-slide modal-slide">
-                        <h1>Hi there, <br> Welcome to Solid!</h1>
-                        <p>
-                            You are only few steps away
-                            from using great, user-centric and stunning decentralized
-                            Web apps powered by Solid.
-                        </p>
-                    </div>
-                    <div class="swiper-slide modal-slide">
-                        <h1>hehe</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+        <main>
+            <section id="onboarding" class="onboarding">
+                <div class="overlay">
+                    <div class="swiper-container onboarding-container">
+                        <div class="swiper-wrapper onboarding-wrapper">
+                            <div class="swiper-slide onboarding-card">
+                                <img src="assets/img/solid-logo.png" height="160" alt="">
+                                <h1>Hi there, <br> Welcome to Solid!</h1>
+                                <p>
+                                     We'd love to tell you about the apps and services available to you when you create a Solid account, but if you just want to get started, skip this stuff.
+                                </p>
+                            </div>
+                            <div class="swiper-slide onboarding-card">
+                                <img src="assets/img/own-your-data.png" height="180" alt="">
+                                <h1>Why Solid?</h1>
+                                <p>
+                                    The dominance of the World Wide Web by large corporate advertising engines has created data silos that are inaccessible to the people who generate that data -- people like you. All your pictures and posts, your profiles and networks -- they are largely out of your control.
+                                </p>
+                            </div>
+                            <div class="swiper-slide onboarding-card">
+                                <img src="assets/img/own-your-data.png" height="180" alt="">
+                                <h1>Own Your Data</h1>
+                                <p>
+                                    With a Solid account, your data is always under your control, because you decide where the data gets stored, who gets to see it and use it, and what applications get to have access to it.
+                                </p>
+                            </div>
+                            <div class="swiper-slide onboarding-card">
+                                <img src="assets/img/customized-experience.png" height="200" alt="">
+                                <h1>Use Any App You Like</h1>
+                                <p>
+                                    Solid data is separate from the applications that access and use it. If you build a photo library in one application, but a better one comes along, you can switch to that app without losing your data.
+                                </p>
+                            </div>
+                            <div class="swiper-slide onboarding-card">
+                                <img src="assets/img/customized-experience.png" height="200" alt="">
+                                <h1>Let Data be Free</h1>
+                                <p>
+                                    Free in the sense of freedom! You can decide what applications see your data. You set permissions and specify what is public, selectively shared, private, and secret!
+                                </p>
+                            </div>
+                            <div class="swiper-slide onboarding-card">
+                                <img src="assets/img/customized-experience.png" height="200" alt="">
+                                <h1>You're almost there...</h1>
+                                <p>
+                                    Let's hear from the Solid team as they describe what makes Solid so exciting.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="onboarding-control-panel" class="onboarding-control-panel">
+                            <p><button id="control-btn-skip" class="control-btn" type="button" name="skip">skip</button></p>
+                            <div class="swiper-pagination steps"></div>
+                            <p><button id="control-btn-next" class="control-btn" type="button" name="next">next</button></p>
+                            <button id="control-btn-done" class="control-btn" type="button" name="done">got it</button>
+                        </div>
                     </div>
                 </div>
-                <div class="modal-controls">
-                    <p>
-                        <button class="skip-button" type="button" name="button">SKIP</button>
-                    </p>
-                    <div class="pagination">
-                        <span class="pagination-bullet-active"></span>
-                        <span class="pagination-bullet"></span>
-                        <span class="pagination-bullet"></span>
-                        <span class="pagination-bullet"></span>
-                    </div>
-                    <p>
-                        <button id="next-button" class="next-button" type="button" name="button">NEXT</button>
-                    </p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
         <script src="assets/js/swiper.min.js"></script>
         <script src="assets/js/app.js"></script>
     </body>
