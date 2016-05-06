@@ -5,6 +5,10 @@ h1 {
     text-align: center;
 }
 
+.onboarding {
+    --display: none;
+}
+
 .overlay {
     height: 100%;
     width: 100%;
@@ -61,6 +65,7 @@ h1 {
 }
 
 @media (min-width: 768px) {
+
     .onboarding-card h1 br {
         display: none;
     }
@@ -68,6 +73,7 @@ h1 {
     .onboarding-card p {
         max-width: 60%;
     }
+
 }
 
 .onboarding-control-panel {
