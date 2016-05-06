@@ -3,6 +3,15 @@ main, section, .container {
     height: 100%;
 }
 
+h1 {
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #547190;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .sign-up-illustration {
     display: none;
 }
@@ -23,12 +32,24 @@ main, section, .container {
     justify-content: center;
 }
 
+@media (min-width: 768px) {
+    .sign-up-wrapper {
+        width: 50%;
+    }
+}
+
 .sign-up-form {
     width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .sign-up-form {
+        width: 80%;
+    }
 }
 
 .sign-up-form fieldset {
@@ -71,7 +92,7 @@ p.log-in {
     text-align: center;
     max-width: 70%;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 0px;
     color: #A2B1C1;
 }
@@ -85,10 +106,4 @@ p.log-in a {
     margin-top: 10px;
     margin-bottom: 0px;
     color: #A2B1C1;
-}
-
-@media (min-width: 768px) {
-    .sign-up-wrapper {
-        width: 50%;
-    }
 }
