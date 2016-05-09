@@ -4,8 +4,8 @@
         <title>Solid</title>
         <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="theme-color" content="#673AB7">
-        <meta name="apple-mobile-web-app-status-bar-style" content="#673AB7">
+        <meta name="theme-color" content="#8E54E9">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#8E54E9">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,100,300,700,900' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="assets/css/swiper.min.css">
         <link rel="stylesheet" href="assets/css/solid-theme.css">
@@ -14,77 +14,163 @@
         <link rel="manifest" href="manifest.json">
     </head>
     <body>
-        <header>
-
-        </header>
         <main>
-            <section class="sign-up">
-                <div class="container">
-                    <div class="sign-up-illustration">
+            <section id="sign-up" class="sign-up">
 
-                    </div>
-                    <div class="sign-up-wrapper">
-                        <h1>Sign Up</h1>
-                        <form class="sign-up-form" action="index.html" method="post">
-                            <fieldset>
-                                <input type="text" name="username" placeholder="username" value="">
-                                <input type="text" name="name" placeholder="full name" value="">
-                                <input type="email" name="email" placeholder="email" value="">
-                                <input type="password" name="password" placeholder="password" value="">
-                                <!--<input type="password" name="confirm-password" placeholder="confirm password" value="">-->
-                            </fieldset>
-                            <button type="submit" name="button">Sign Up</button>
-                        </form>
-                        <p class="log-in">
-                            Already have an account? <a href="#">Sign In</a>
-                        </p>
-                    </div>
+                <div class="sign-up-wrapper">
+                    <h1>Sign Up</h1>
+                    <form class="" action="index.html" method="post">
+                        <fieldset>
+                            <!--<div class="profile-picture">
+                                <img src="assets/img/profile-icon.png" height="150" alt="">
+                            </div>-->
+                            <div class="username">
+                                <div class="field-icon">
+                                    <img src="assets/img/username-icon.png" height="80" alt="">
+                                </div>
+                                <div class="field-content">
+                                    <label for="">Username</label>
+                                    <input type="text" name="name" placeholder="john23" value="" required>
+                                </div>
+                            </div>
+                            <div class="username">
+                                <div class="field-icon">
+                                    <img src="assets/img/profile-icon1.png" height="80" alt="">
+                                </div>
+                                <div class="field-content">
+                                    <label for="">Your name</label>
+                                    <input type="text" name="name" placeholder="John Doe" value="" required>
+                                </div>
+                            </div>
+                            <div class="username">
+                                <div class="field-icon">
+                                    <img src="assets/img/email-icon.png" height="80" alt="">
+                                </div>
+                                <div class="field-content">
+                                    <label for="">Email address</label>
+                                    <input type="text" name="name" placeholder="john@example.com" value="" required>
+                                </div>
+                            </div>
+                            <div class="username">
+                                <div class="field-icon">
+                                    <img src="assets/img/password-icon1.png" height="80" alt="">
+                                </div>
+                                <div class="field-content">
+                                    <label for="">Give a password</label>
+                                    <input type="password" name="name" placeholder="password" value="" required>
+                                </div>
+                            </div>
+
+
+                            <!--<div class="sign-up-swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img class="form-icon" src="assets/img/profile-icon.png" alt="">
+                                        <h2>What is your name?</h2>
+                                        <input type="text" name="full-name" placeholder="Full Name" value="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="form-icon" src="assets/img/email-icon1.png" alt="">
+                                        <h2>Hey Guillaume, <br> what is your email address?</h2>
+                                        <input type="email" name="email" placeholder="example@me.com" value="">
+                                    </div>
+                                </div>
+                                <div class="sign-up-next">
+                                    <button type="button" name="button">Next</button>
+                                </div>
+                            </div>-->
+                        </fieldset>
+                        <button type="submit" name="button">Sign up</button>
+                    </form>
                 </div>
+
+
+
+
+
+                    <!--<div class="sign-up-wrapper">
+                        <h1>Sign up</h1>
+                        <form class="sign-up-form" action="index.html" method="post">
+                            <div class="">
+                                <div class="">
+                                    <fieldset class="full-name-field swiper-slide">
+                                        <h2>What's your name?</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                        <input type="text" name="full-name" placeholder="full name" autocomplete="off" autocapitalize="off" value="">
+                                    </fieldset>
+                                    <fieldset class="username-field swiper-slide">
+                                        <h2>First, let's pick a username.</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <div class="username-field swiper-slide">
+                                            <input type="text" name="username" placeholder="username" autocomplete="off" autocapitalize="off" value="">
+                                            <button type="button" name="button">.databox.me</button>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="email-field swiper-slide">
+                                        <h2>Do you have an email?</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                        <input type="email" name="email" placeholder="email address" value="">
+                                    </fieldset>
+                                    <fieldset class="password-field swiper-slide">
+                                        <h2>Set up your password.</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                        <input type="password" name="password" placeholder="password" value="">
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <button type="submit" name="button">Submit</button>
+                        </form>
+                    </div>-->
+
+
+                        <div class="sign-up-nav">
+
+                        </div>
+
             </section>
+
+
+
             <section id="onboarding" class="onboarding">
                 <div class="overlay">
                     <div class="swiper-container onboarding-container">
                         <div class="swiper-wrapper onboarding-wrapper">
                             <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/solid-logo.png" height="160" alt="">
+                                <img src="assets/img/solid-logo.png" height="220" alt="">
                                 <h1>Hi there, <br> Welcome to Solid!</h1>
                                 <p>
-                                     We'd love to tell you about the apps and services available to you when you create a Solid account, but if you just want to get started, skip this stuff.
+                                     To learn about apps and services you get when you create a Solid account, press on! Otherwise, skip ahead to register.
                                 </p>
                             </div>
                             <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/own-your-data.png" height="180" alt="">
-                                <h1>Why Solid?</h1>
+                                <img src="assets/img/own-your-data3.png" height="250" alt="">
+                                <h2>Own your data</h2>
                                 <p>
-                                    The dominance of the World Wide Web by large corporate advertising engines has created data silos that are inaccessible to the people who generate that data -- people like you. All your pictures and posts, your profiles and networks -- they are largely out of your control.
-                                </p>
-                            </div>
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/own-your-data.png" height="180" alt="">
-                                <h1>Own Your Data</h1>
-                                <p>
-                                    With a Solid account, your data is always under your control, because you decide where the data gets stored, who gets to see it and use it, and what applications get to have access to it.
+                                    With a Solid account, your data is always under your control. You decide where to keep your data and who gets to see it.
                                 </p>
                             </div>
                             <div class="swiper-slide onboarding-card">
                                 <img src="assets/img/customized-experience.png" height="200" alt="">
-                                <h1>Use Any App You Like</h1>
+                                <h2>Use Any App You Like</h2>
                                 <p>
-                                    Solid data is separate from the applications that access and use it. If you build a photo library in one application, but a better one comes along, you can switch to that app without losing your data.
+                                    Solid data is separate from the applications that use it. You can switch between apps without losing your data.
                                 </p>
                             </div>
                             <div class="swiper-slide onboarding-card">
                                 <img src="assets/img/customized-experience.png" height="200" alt="">
-                                <h1>Let Data be Free</h1>
+                                <h2>Let Data be Free</h2>
                                 <p>
-                                    Free in the sense of freedom! You can decide what applications see your data. You set permissions and specify what is public, selectively shared, private, and secret!
+                                    Free in the sense of freedom! You decide what data applications can see, what is public and what is private.
                                 </p>
                             </div>
                             <div class="swiper-slide onboarding-card">
                                 <img src="assets/img/customized-experience.png" height="200" alt="">
-                                <h1>You're almost there...</h1>
+                                <h2>You're almost there...</h2>
                                 <p>
                                     Let's hear from the Solid team as they describe what makes Solid so exciting.
+                                </p>
+                                <p class="sign-up">
+                                    <button id="sign-up-btn" class="control-btn" type="button" name="done">Got it</button>
                                 </p>
                             </div>
                         </div>
@@ -97,8 +183,13 @@
                     </div>
                 </div>
             </section>
+
         </main>
+
+
+
         <script src="assets/js/swiper.min.js"></script>
         <script src="assets/js/app.js"></script>
+        <script src="assets/js/app2.js"></script>
     </body>
 </html>
