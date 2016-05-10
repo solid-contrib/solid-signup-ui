@@ -27,7 +27,7 @@ fieldset {
 
 }
 
-.username {
+.field {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
@@ -100,7 +100,7 @@ button[type="submit"] {
         width: 25em;
         height: 100%;
     }
-    .username {
+    .field {
         width: 80%;
         margin: auto;
         margin-top: 20px;
