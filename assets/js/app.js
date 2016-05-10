@@ -6,10 +6,13 @@
         //allowSwipeToPrev: false
     });
 
-    var signupswiper = new Swiper('.signup-swiper-container', {
-        allowSwipeToPrev: false,
-        allowSwipeToNext: false
+    var learnmoreswiper = new Swiper('.learn-more-swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay: 5000
+        //allowSwipeToPrev: false
     });
+
 
     // get elements
     var onboarding = document.getElementById('onboarding');

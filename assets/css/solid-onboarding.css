@@ -165,3 +165,7 @@ h1 {
     display: none;
     color: white;
 }
+
+.learn-more-swiper-container {
+    background-color: transparent;
+}
