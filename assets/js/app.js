@@ -1,9 +1,9 @@
 (function() {
 
-    var swiper = new Swiper('.swiper-container', {
+    var myswiper = new Swiper('#swiper-onboarding', {
         pagination: '.swiper-pagination',
         paginationClickable: true,
-        //allowSwipeToPrev: false
+        allowSwipeToPrev: false
     });
 
     var learnmoreswiper = new Swiper('.learn-more-swiper-container', {
@@ -23,7 +23,7 @@
 
     // add event listeners
     nextBtn.addEventListener('click', function() {
-        swiper.slideNext(false, 300);
+        myswiper.slideNext(false, 300);
     }, false);
 
     skipBtn.addEventListener('click', function() {
@@ -35,14 +35,8 @@
     }, false);
 
     // detect end of onboarding
-    swiper.on('ReachEnd', function () {
-        //onboardingControlPanel.innerHTML = '<p class="onboarding-done"><button id="control-btn-done" class="control-btn" type="button" name="done">got it</button></p>';
-        /*var doneBtn = document.getElementById('control-btn-done')
-        doneBtn.addEventListener('click', function() {
-            onboarding.style.display = 'none';
-        }, false);
-        doneBtn.style.display = 'block';*/
+    /*swiper.on('ReachEnd', function () {
         onboardingControlPanel.style.display = 'none';
-    });
+    });*/
 
 })();
