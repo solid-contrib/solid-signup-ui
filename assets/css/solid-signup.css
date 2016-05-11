@@ -87,7 +87,7 @@ input {
 
 }
 
-button[type="submit"] {
+button[type="button"] {
     width: 60%;
     border: none;
     border: 1px solid #673AB7;
@@ -198,7 +198,7 @@ button[type="submit"] {
 }
 
 @media (min-width: 768px) {
-    button[type="submit"] {
+    button[type="button"] {
         width: 60%;
     }
 
