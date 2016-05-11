@@ -9,6 +9,13 @@
     display: none;
 }
 
+.sign-up-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+
 .sign-up-wrapper h1 {
     text-align: center;
         font-size: 1.4em;
@@ -19,6 +26,7 @@
 }
 form {
     text-align: center;
+    width: 100%;
 }
 fieldset {
     border: 0px;
