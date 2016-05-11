@@ -4,6 +4,9 @@ h1 {
     text-align: center;
 }
 
+#onboarding {
+    display: block;
+}
 .onboarding {
     position: fixed;
     top: 0px;
@@ -100,7 +103,9 @@ h1 {
     .onboarding-card p {
         max-width: 60%;
     }
-
+    #onboarding {
+        display: none;
+    }
 }
 
 .onboarding-control-panel {
