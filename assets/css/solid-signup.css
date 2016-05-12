@@ -183,6 +183,25 @@ button[type="button"] {
     display: inline
 }
 
+#errorbox {
+    border: 1px solid #F44336;
+    width: 68%;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 20px 10px 20px 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#errorbox p {
+    font-size: 0.8em;
+    max-width: 100%;
+    margin: auto;
+    text-align: left;
+    color: #F44336;
+}
+
 /* .svg img {
     display: none
 } */
