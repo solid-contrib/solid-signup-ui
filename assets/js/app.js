@@ -156,6 +156,8 @@
               } else {
                 console.log("Account is taken!", url)
                 notValid("username-field-status");
+                document.getElementById('errorbox').style.display = 'block';
+                document.getElementById('errorbox').innerHTML = '<p>username already taken! please choose an other one or <a href="#">log in</a>.</p>';
                 userOK = false;
               }
               allOK();
