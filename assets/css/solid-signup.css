@@ -71,6 +71,11 @@ fieldset {
     margin-left: 10px;
 }
 
+.field-status {
+    width: 20px;
+    text-align: center;
+}
+
 label {
     display: block;
 }
