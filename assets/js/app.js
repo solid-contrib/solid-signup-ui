@@ -1,7 +1,6 @@
 (function () {
-  var DOMAIN = 'https://databox.me'
-  var ACCOUNT_ENDPOINT = ',system/newAccount'
-  // var CERT_ENDPOINT = ',system/newCert'
+  var DOMAIN = 'https://databox2.com'
+  var ACCOUNT_ENDPOINT = 'api/accounts/new'
 
   var accURL = {}
   var queryVals = (function (a) {
@@ -21,7 +20,6 @@
   // External source?
   var _domain = queryVals['domain']
   var _accEndpoint = queryVals['acc']
-  var _crtEndpoint = queryVals['crt']
 
   // Prepare domain
   var parser = document.createElement('a')
@@ -34,20 +32,16 @@
   if (_accEndpoint && _accEndpoint.length > 0) {
     ACCOUNT_ENDPOINT = _accEndpoint
   }
-  // Prepare cert endpoint
-  if (_crtEndpoint && _crtEndpoint.length > 0) {
-    CERT_ENDPOINT = _crtEndpoint
-  }
 
   var userOK, nameOK, emailOK, passOK
 
   var myswiper = new window.Swiper('#swiper-onboarding', {
     pagination: '.swiper-pagination',
     paginationClickable: true,
-    allowSwipeToPrev: false
+    allowSwipeToPrev: true
   })
 
-  var learnmoreswiper = new window.Swiper('.learn-more-swiper-container', {
+  window.Swiper('.learn-more-swiper-container', {
     pagination: '.swiper-pagination',
     paginationClickable: true,
     autoplay: 5000
@@ -59,6 +53,7 @@
   var nextBtn = document.getElementById('control-btn-next')
   var skipBtn = document.getElementById('control-btn-skip')
   var form = document.getElementById('form')
+  var fields = document.getElementById('fields')
   var signupBtn = document.getElementById('sign-up-btn')
   var accountBtn = document.getElementById('account-btn')
   var userField = document.getElementsByName('username')[0]
@@ -67,7 +62,10 @@
   var passField = document.getElementsByName('password')[0]
   // var onboardingControlPanel = document.getElementById('onboarding-control-panel')
 
-  var validateUsername = function () {
+  var validateUsername = function (e) {
+    if (e.which === 9) {
+      return
+    }
     var username = document.getElementsByName('username')[0].value
     // cleaup
     username = username.toLowerCase().replace(/\s+/g, '-')
@@ -79,56 +77,59 @@
     }
 
     document.getElementsByName('username')[0].value = username
-    var re = /^[a-zA-Z0-9-_]*$/
+    var re = /^[a-z0-9-]*$/
     if (username.length === 0 || !re.test(username)) {
-      console.log('Bad username field!', username)
-      notValid('username-field-status')
+      notValid('username-field-status',
+        'Only letters, numbers and dash characters are allowed for usernames'
+        )
       userOK = false
     } else {
-      console.log('Username looks good!', username)
       isValid('username-field-status')
       checkUsername(username)
     }
     allOK()
   }
 
-  var validateName = function () {
+  var validateName = function (e) {
+    if (e.which === 9) {
+      return
+    }
     var name = document.getElementsByName('name')[0].value
     if (name.length === 0) {
-      console.log('Bad name field!', name)
-      notValid('name-field-status')
+      notValid('name-field-status', 'Your name cannot be empty')
       nameOK = false
     } else {
-      console.log('Name field looks good!', name)
       isValid('name-field-status')
       nameOK = true
     }
     allOK()
   }
 
-  var validateEmail = function () {
+  var validateEmail = function (e) {
+    if (e.which === 9) {
+      return
+    }
     var email = document.getElementsByName('email')[0].value
     var re = /^(([^<>()\[\]\.,;:\s@\']+(\.[^<>()\[\]\.,;:\s@\']+)*)|(\'.+\'))@(([^<>()[\]\.,;:\s@\']+\.)+[^<>()[\]\.,;:\s@\']{2,})$/i
     if (email.length === 0 || !re.test(email)) {
-      console.log('Malformed email!', email)
-      notValid('email-field-status')
+      notValid('email-field-status', 'Please provide a valid email address')
       emailOK = false
     } else {
-      console.log('Good email!', email)
       isValid('email-field-status')
       emailOK = true
     }
     allOK()
   }
 
-  var validatePass = function () {
+  var validatePass = function (e) {
+    if (e.which === 9) {
+      return
+    }
     var password = document.getElementsByName('password')[0].value
     if (password.length < 8) {
-      console.log('Password is too short!', password.length)
-      notValid('password-field-status')
+      notValid('password-field-status', 'Minimum password length is 8 characters')
       passOK = false
     } else {
-      console.log('Password field looks good!', password.length)
       isValid('password-field-status')
       passOK = true
     }
@@ -141,22 +142,20 @@
       var http = new window.XMLHttpRequest()
       http.open('HEAD', url)
       http.onreadystatechange = function () {
-        console.log(this.status)
         if (this.readyState === this.DONE) {
+          userOK = false
           if (this.status === 0) {
             // disconnected
-            console.log('Could not connect to server on', url)
-            userOK = false
+            notValid('username-field-status',
+              'Could not connect to server on ' + url
+              )
           } else if (this.status === 404) {
-            console.log('Account available!', url)
             isValid('username-field-status')
             userOK = true
           } else {
-            console.log('Account is taken!', url)
-            notValid('username-field-status')
-            document.getElementById('errorbox').style.display = 'block'
-            document.getElementById('errorbox').innerHTML = '<p>Username already taken! Choose another one or <a href="#">Sign in</a>.</p>'
-            userOK = false
+            notValid('username-field-status',
+              'Username taken! Please choose another one'
+              )
           }
           allOK()
         }
@@ -170,6 +169,8 @@
     var name = document.getElementsByName('name')[0].value
     var email = document.getElementsByName('email')[0].value
     if (username.length > 0) {
+      fields.setAttribute('disabled', true)
+      signupBtn.classList.add('disabled')
       var url = makeURI(username) + ACCOUNT_ENDPOINT
       var data = 'username=' + username + '&email=' + email + '&name=' + name
       var http = new window.XMLHttpRequest()
@@ -181,12 +182,9 @@
           if (this.status >= 200 && this.status < 300) {
             var webid = this.getResponseHeader('User')
             if (webid && webid.length > 0) {
-              // document.getElementById('webid').value = webid;
-              console.log('Your new WebID is', webid)
               // all done
               form.style.display = 'none'
               successbox.style.display = 'flex'
-
               // see if we have to redirect
               var origin = queryVals['origin']
               if (origin) {
@@ -194,7 +192,7 @@
                 accountBtn.addEventListener('click', function () {
                   window.location.replace(origin)
                 }, false)
-
+                // redirect back to app
                 returnToApp(webid, origin)
               } else {
                 accountBtn.innerHTML = 'Take me to my Solid dashboard'
@@ -205,6 +203,8 @@
             }
           } else {
             console.log('Error creating account at', url)
+            fields.setAttribute('disabled', false)
+            signupBtn.classList.remove('disabled')
           }
         }
       }
@@ -215,15 +215,40 @@
   var allOK = function () {
     if (userOK && nameOK && emailOK && passOK) {
       signupBtn.classList.remove('disabled')
+      return true
     }
+    return false
   }
 
   var isValid = function (elemId) {
     document.getElementById(elemId).innerHTML = '<img src="assets/img/ok-status.svg" height="15" alt="">'
+    var errorBox = document.getElementById('errorbox')
+    var errElem = document.getElementById(elemId + '-error')
+    if (errElem) {
+      errElem.parentNode.removeChild(errElem)
+      // errElem.parentNode.innerHTML = ''
+    }
+    // console.log('Inner L', errorBox.innerHTML.length, '"' + errorBox.innerHTML + '"')
+    if (errorBox.style.display === 'block') {
+      if (errorBox.childNodes.length === 1 && errorBox.childNodes[0].nodeType === 3) {
+        errorBox.style.display = 'none'
+      }
+    }
   }
 
-  var notValid = function (elemId) {
-    document.getElementById(elemId).innerHTML = '<img src="assets/img/not-ok-status.svg" height="15" alt="">'
+  var notValid = function (elemId, msg) {
+    var parent = document.getElementById(elemId)
+    parent.innerHTML = '<img src="assets/img/not-ok-status.svg" height="15" alt="">'
+    var errId = elemId + '-error'
+    var errorBox = document.getElementById('errorbox')
+    errorBox.style.display = 'block'
+    var errElem = document.getElementById(errId)
+    if (!errElem) {
+      var li = document.createElement('li')
+      li.id = errId
+      li.innerHTML = msg
+      errorBox.appendChild(li)
+    }
   }
 
   var makeURI = function (username) {
@@ -275,6 +300,12 @@
   signupBtn.addEventListener('click', function () {
     createAccount()
   }, false)
+
+  form.addEventListener('keypress', function (e) {
+    if (e.which === 13 && allOK()) {
+      createAccount()
+    }
+  })
 
   userField.addEventListener('keyup', throttle(validateUsername, 500), false)
 
