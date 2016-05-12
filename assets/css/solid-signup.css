@@ -94,10 +94,10 @@ input {
 
 #sign-up-btn {
     margin-top: 40px;
+        width: 60%;
 }
 
 button[type="button"] {
-    width: 60%;
     border: none;
     border: 1px solid #673AB7;
     border-radius: 100px;
