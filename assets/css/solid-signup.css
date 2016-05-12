@@ -92,6 +92,10 @@ input {
 
 }
 
+#sign-up-btn {
+    margin-top: 40px;
+}
+
 button[type="button"] {
     width: 60%;
     border: none;
@@ -101,7 +105,7 @@ button[type="button"] {
     background: transparent;
     color: #673AB7;
     font-size: 1.1em;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 10px;
     cursor: pointer;
 }
