@@ -119,7 +119,7 @@
     } else {
       var re = /^(([^<>()\[\]\.,;:\s@\']+(\.[^<>()\[\]\.,;:\s@\']+)*)|(\'.+\'))@(([^<>()[\]\.,;:\s@\']+\.)+[^<>()[\]\.,;:\s@\']{2,})$/i
       if (!re.test(email)) {
-        notValid('email-field-status', 'Please provide a valid email address')
+        notValid('email-field-status')
       } else {
         isValid('email-field-status')
         emailOK = true
@@ -141,8 +141,8 @@
       strength.innerHTML = ''
       clearError('password-field-status')
     } else if (password.value.length < 8) {
-      notValid('password-field-status', 'Minimum password length is 8 characters')
-      strength.innerHTML = '(short)'
+      notValid('password-field-status')
+      strength.innerHTML = '(too short)'
       strength.style.color = '#F44336'
     } else {
       var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{12,})/
@@ -271,15 +271,17 @@
   var notValid = function (elemId, msg) {
     var parent = document.getElementById(elemId)
     parent.innerHTML = '<img src="assets/img/not-ok-status.svg" height="15" alt="">'
-    var errId = elemId + '-error'
-    var errorBox = document.getElementById('errorbox')
-    errorBox.style.display = 'block'
-    var errElem = document.getElementById(errId)
-    if (!errElem) {
-      var li = document.createElement('li')
-      li.id = errId
-      li.innerHTML = msg
-      errorBox.appendChild(li)
+    if (msg) {
+      var errId = elemId + '-error'
+      var errorBox = document.getElementById('errorbox')
+      errorBox.style.display = 'block'
+      var errElem = document.getElementById(errId)
+      if (!errElem) {
+        var li = document.createElement('li')
+        li.id = errId
+        li.innerHTML = msg
+        errorBox.appendChild(li)
+      }
     }
   }
 
