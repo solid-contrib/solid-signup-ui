@@ -343,11 +343,11 @@
     }
   })
 
-  userField.addEventListener('keyup', validateUsername, false)
+  userField.addEventListener('input', validateUsername, false)
 
-  nameField.addEventListener('keyup', validateName, false)
+  nameField.addEventListener('input', validateName, false)
 
-  emailField.addEventListener('keyup', validateEmail, false)
+  emailField.addEventListener('input', validateEmail, false)
 
-  passField.addEventListener('keyup', validatePass, false)
+  passField.addEventListener('input', validatePass, false)
 })()
