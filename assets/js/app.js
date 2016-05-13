@@ -141,7 +141,7 @@
       strength.innerHTML = '(short)'
       strength.style.color = '#F44336'
     } else {
-      var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+      var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{12,})/
       var mediumRegex = /^(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$/
       if (strongRegex.test(password.value)) {
         strength.innerHTML = '(strong)'
