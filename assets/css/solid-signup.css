@@ -209,6 +209,7 @@ button[type="button"] {
 }
 
 #errorbox li {
+    list-style-type: none;
     font-size: 0.8em;
     max-width: 100%;
     margin-left: 20px;
