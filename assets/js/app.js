@@ -67,26 +67,22 @@
     if (e.which === 9) {
       return
     }
-    var username = document.getElementsByName('username')[0].value
-    // cleaup
-    username = username.toLowerCase().replace(/\s+/g, '-')
-    if (username.indexOf('-') === 0) {
-      username = username.slice(1)
-    }
-    if (username.lastIndexOf('-') === username.length - 1) {
-      username = username.slice(0, -1)
-    }
+    userOK = false
 
-    document.getElementsByName('username')[0].value = username
-    var re = /^[a-z0-9-]*$/
-    if (username.length === 0 || !re.test(username)) {
-      notValid('username-field-status',
-        'Only letters, numbers and dash characters are allowed for usernames'
-        )
-      userOK = false
+    var re = /^[a-zA-Z0-9-]*$/
+    var username = document.getElementsByName('username')[0].value
+
+    if (username.length === 0) {
+      clearError('username-field-status')
     } else {
-      isValid('username-field-status')
-      checkUsername(username)
+      if (username.indexOf('-') === 0 || username.lastIndexOf('-') === username.length - 1 || !re.test(username)) {
+        notValid('username-field-status',
+          'Only letters, numbers and dash characters are allowed for usernames'
+          )
+      } else {
+        isValid('username-field-status')
+        checkUsername(username)
+      }
     }
     allOK()
   }
@@ -95,10 +91,11 @@
     if (e.which === 9) {
       return
     }
+    nameOK = false
+
     var name = document.getElementsByName('name')[0].value
     if (name.length === 0) {
-      notValid('name-field-status', 'Your name cannot be empty')
-      nameOK = false
+      clearError('name-field-status')
     } else {
       isValid('name-field-status')
       nameOK = true
@@ -110,14 +107,19 @@
     if (e.which === 9) {
       return
     }
+    emailOK = false
+
     var email = document.getElementsByName('email')[0].value
-    var re = /^(([^<>()\[\]\.,;:\s@\']+(\.[^<>()\[\]\.,;:\s@\']+)*)|(\'.+\'))@(([^<>()[\]\.,;:\s@\']+\.)+[^<>()[\]\.,;:\s@\']{2,})$/i
-    if (email.length === 0 || !re.test(email)) {
-      notValid('email-field-status', 'Please provide a valid email address')
-      emailOK = false
+    if (email.length === 0) {
+      clearError('email-field-status')
     } else {
-      isValid('email-field-status')
-      emailOK = true
+      var re = /^(([^<>()\[\]\.,;:\s@\']+(\.[^<>()\[\]\.,;:\s@\']+)*)|(\'.+\'))@(([^<>()[\]\.,;:\s@\']+\.)+[^<>()[\]\.,;:\s@\']{2,})$/i
+      if (!re.test(email)) {
+        notValid('email-field-status', 'Please provide a valid email address')
+      } else {
+        isValid('email-field-status')
+        emailOK = true
+      }
     }
     allOK()
   }
@@ -126,13 +128,18 @@
     if (e.which === 9) {
       return
     }
+    passOK = false
+
     var password = document.getElementsByName('password')[0].value
-    if (password.length < 8) {
-      notValid('password-field-status', 'Minimum password length is 8 characters')
-      passOK = false
+    if (password.length === 0) {
+      clearError('password-field-status')
     } else {
-      isValid('password-field-status')
-      passOK = true
+      if (password.length < 8) {
+        notValid('password-field-status', 'Minimum password length is 8 characters')
+      } else {
+        isValid('password-field-status')
+        passOK = true
+      }
     }
     allOK()
   }
@@ -217,24 +224,29 @@
     if (userOK && nameOK && emailOK && passOK) {
       signupBtn.classList.remove('disabled')
       return true
+    } else {
+      signupBtn.classList.add('disabled')
     }
     return false
   }
 
-  var isValid = function (elemId) {
-    document.getElementById(elemId).innerHTML = '<img src="assets/img/ok-status.svg" height="15" alt="">'
+  var clearError = function (elemId) {
+    document.getElementById(elemId).innerHTML = ''
     var errorBox = document.getElementById('errorbox')
     var errElem = document.getElementById(elemId + '-error')
     if (errElem) {
       errElem.parentNode.removeChild(errElem)
-      // errElem.parentNode.innerHTML = ''
     }
-    // console.log('Inner L', errorBox.innerHTML.length, '"' + errorBox.innerHTML + '"')
     if (errorBox.style.display === 'block') {
       if (errorBox.childNodes.length === 1 && errorBox.childNodes[0].nodeType === 3) {
         errorBox.style.display = 'none'
       }
     }
+  }
+
+  var isValid = function (elemId) {
+    clearError(elemId)
+    document.getElementById(elemId).innerHTML = '<img src="assets/img/ok-status.svg" height="15" alt="">'
   }
 
   var notValid = function (elemId, msg) {
@@ -275,19 +287,19 @@
   }
 
   // throttle functions (useful for ajax requests)
-  function throttle (func, wait) {
-    var timeout
-    return function () {
-      var context = this
-      var args = arguments
-      if (!timeout) {
-        timeout = window.setTimeout(function () {
-          timeout = null
-          func.apply(context, args)
-        }, wait)
-      }
-    }
-  }
+  // function throttle (func, wait) {
+  //   var timeout
+  //   return function () {
+  //     var context = this
+  //     var args = arguments
+  //     if (!timeout) {
+  //       timeout = window.setTimeout(function () {
+  //         timeout = null
+  //         func.apply(context, args)
+  //       }, wait)
+  //     }
+  //   }
+  // }
 
   // add event listeners
   nextBtn.addEventListener('click', function () {
@@ -312,7 +324,7 @@
     }
   })
 
-  userField.addEventListener('keyup', throttle(validateUsername, 500), false)
+  userField.addEventListener('keyup', validateUsername, false)
 
   nameField.addEventListener('keyup', validateName, false)
 
