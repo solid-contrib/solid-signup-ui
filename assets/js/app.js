@@ -54,6 +54,7 @@
   var skipBtn = document.getElementById('control-btn-skip')
   var form = document.getElementById('form')
   var fields = document.getElementById('fields')
+  var gotitBtn = document.getElementById('gotit-btn')
   var signupBtn = document.getElementById('sign-up-btn')
   var accountBtn = document.getElementById('account-btn')
   var userField = document.getElementsByName('username')[0]
@@ -294,6 +295,10 @@
   }, false)
 
   skipBtn.addEventListener('click', function () {
+    onboarding.style.display = 'none'
+  }, false)
+
+  gotitBtn.addEventListener('click', function () {
     onboarding.style.display = 'none'
   }, false)
 
