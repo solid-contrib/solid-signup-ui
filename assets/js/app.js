@@ -130,16 +130,31 @@
     }
     passOK = false
 
-    var password = document.getElementsByName('password')[0].value
-    if (password.length === 0) {
+    // check password strength
+    var password = document.getElementsByName('password')[0]
+    var strength = document.getElementById('strength')
+    if (password.value.length === 0) {
+      strength.innerHTML = ''
       clearError('password-field-status')
+    } else if (password.value.length < 8) {
+      notValid('password-field-status', 'Minimum password length is 8 characters')
+      strength.innerHTML = '(short)'
+      strength.style.color = '#F44336'
     } else {
-      if (password.length < 8) {
-        notValid('password-field-status', 'Minimum password length is 8 characters')
+      var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+      var mediumRegex = /^(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$/
+      if (strongRegex.test(password.value)) {
+        strength.innerHTML = '(strong)'
+        strength.style.color = '#18E883'
+      } else if (mediumRegex.test(password.value)) {
+        strength.innerHTML = '(good)'
+        strength.style.color = '#FFCF5C'
       } else {
-        isValid('password-field-status')
-        passOK = true
+        strength.innerHTML = '(weak)'
+        strength.style.color = '#E0571E'
       }
+      isValid('password-field-status')
+      passOK = true
     }
     allOK()
   }
