@@ -50,8 +50,10 @@ h1 {
 }
 
 .onboarding-card {
+
     height: auto;
     text-align: center;
+    overflow: scroll;
 }
 
 .onboarding-card h1 {
@@ -60,7 +62,8 @@ h1 {
     line-height: 1.5em;
     color: #547190;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .onboarding-card h2 {
     font-size: 1.1em;
@@ -68,11 +71,12 @@ h1 {
     line-height: 1.5em;
     color: #547190;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .onboarding-card p {
-    font-size:1em;
+    font-size:0.9em;
     line-height: 1.5em;
     text-align: center;
     max-width: 80%;
