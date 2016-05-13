@@ -92,6 +92,10 @@ input {
 
 }
 
+.lower {
+  text-transform: lowercase;
+}
+
 #sign-up-btn {
     margin-top: 40px;
         width: 60%;
