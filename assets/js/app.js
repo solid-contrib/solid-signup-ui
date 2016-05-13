@@ -70,14 +70,18 @@
     userOK = false
 
     var re = /^[a-zA-Z0-9-]*$/
+    var dash = /-{2,}/g
     var username = document.getElementsByName('username')[0].value
 
     if (username.length === 0) {
       clearError('username-field-status')
     } else {
-      if (username.indexOf('-') === 0 || username.lastIndexOf('-') === username.length - 1 || !re.test(username)) {
+      if (username.indexOf('-') === 0 ||
+       username.lastIndexOf('-') === username.length - 1 ||
+       dash.test(username) ||
+       !re.test(username)) {
         notValid('username-field-status',
-          'Only letters, numbers and dash characters are allowed for usernames'
+          'Only letters, numbers and single dash characters are allowed for usernames'
           )
       } else {
         isValid('username-field-status')
