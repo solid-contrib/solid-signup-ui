@@ -1,5 +1,6 @@
 (function () {
   var DOMAIN = 'https://databox2.com'
+  var SIGNIN_LINK = 'https://databox2.com/sigin/'
   var ACCOUNT_ENDPOINT = 'api/accounts/new'
 
   var accURL = {}
@@ -181,7 +182,8 @@
             userOK = true
           } else {
             notValid('username-field-status',
-              'Username taken! Please choose another one'
+              'Username taken! Try another one or <a href="' +
+              SIGNIN_LINK + '">sign in</a>.'
               )
           }
           allOK()
