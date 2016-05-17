@@ -259,9 +259,7 @@
       errElem.parentNode.removeChild(errElem)
     }
     if (errorBox.style.display === 'block') {
-      if (errorBox.childNodes.length === 1 && errorBox.childNodes[0].nodeType === 3) {
-        errorBox.style.display = 'none'
-      }
+      errorBox.style.display = 'none'
     }
   }
 
