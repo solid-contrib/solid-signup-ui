@@ -1,0 +1,191 @@
+h1 {
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+p {
+    font-size: 1em;
+    color: rgba(38, 38, 38, 0.8);
+}
+
+header {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+header .container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header .container nav ul {
+    padding: 0px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+header .container nav ul li {
+    list-style-type: none;
+    padding: 0px 20px 0px 20px;
+}
+
+header .container nav ul li a {
+    font-size: 0.8em;
+    text-decoration: none;
+    color: #4776E6;
+}
+
+.hero .signup {
+    width: 100%;
+}
+
+.hero .signup {
+    text-align: center;
+}
+
+.hero .signup h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.hero .signup p {
+    text-align: center;
+    margin: 20px;
+}
+
+.hero .signup form {
+    margin-top: 50px;
+}
+
+.hero .signup form .btn {
+    margin-top: 20px;
+}
+
+.hero .signup form .call-to-action div p {
+    font-size: 0.8em;
+    color: rgba(38, 38, 38, 1);
+}
+
+.hero .signup form .call-to-action div p a {
+    text-decoration: none;
+    color: #4776E6;
+}
+
+.hero .intro {
+    display: none;
+}
+
+@media (min-width: 400px) {
+    .hero .signup form {
+        max-width: 400px;
+        margin: 50px auto 0px auto;
+    }
+}
+
+@media (min-width: 960px) {
+
+    header {
+        --position: fixed;
+        --top: 0px;
+        --left: 0px;
+        --border-bottom: 1px solid rgba(38, 38, 38, 0.1);
+        margin-top: 30px;
+    }
+
+    .hero {
+        padding-top: 50px;
+        padding-bottom: 150px;
+    }
+
+    .hero .container {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero .signup {
+        width: 60%;
+    }
+
+    .hero .signup img {
+        transform: rotate(0deg);
+    }
+
+    .hero .signup form {
+        max-width: 550px;
+        margin: 50px auto 0px auto;
+        text-align: center;
+    }
+
+    .hero .signup form fieldset .fields-container {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .hero .signup form fieldset .field {
+        width: 50%;
+        display: flex;
+        flex-flow: column;
+        padding: 0px 10px 0px 10px;
+        box-sizing: border-box;
+    }
+
+    .hero .signup form fieldset .field label {
+        text-align: left;
+    }
+
+    .hero .signup form .call-to-action {
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        margin-top: 20px;
+    }
+
+    .hero .signup form .call-to-action div {
+        width: 50%;
+        padding: 0px 10px 0px 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero .signup form .call-to-action button.btn {
+        width: 100%;
+        margin-top: 0px;
+
+    }
+
+    .hero .signup form .call-to-action div p {
+        text-align: left;
+    }
+
+    .hero .intro {
+        width: 40%;
+        display: flex;
+        flex-flow: column;
+        overflow: hidden;
+    }
+
+    .hero .intro .illustration {
+        width: 130%;
+        height: auto;
+    }
+
+    .test-class {
+        height: 300px;
+        width: 100%;
+        background: linear-gradient(45deg, #448aff , #2979ff );
+    }
+
+}

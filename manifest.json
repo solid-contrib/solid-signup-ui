@@ -1,9 +1,9 @@
 {
-    "name": "Solid Signup",
+    "name": "Solid",
     "lang": "en",
     "start_url": "./",
     "icons": [
-        {"src": "assets/img/solid-logo.png",
+        {"src": "assets/img/solid-icon.png",
          "sizes": "any",
          "type": "image/png"
         }
