@@ -29,15 +29,22 @@ form fieldset label {
 
 form fieldset input {
     width: 100%;
-    padding: 12px 15px 13px 15px;
+    padding: 12px 40px 13px 15px;
     margin: 10px auto 15px auto;
     border-radius: 3px;
     border: 1px solid rgba(38, 38, 38, 0.1);
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 400;
     color: rgba(38, 38, 38, 1);
     outline: none;
     box-sizing: border-box;
+}
+
+form fieldset input.success {
+    background-image: url('../images/success.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: calc(100% - 10px);
 }
 
 form fieldset input.error {
@@ -64,7 +71,7 @@ form fieldset .input-container {
     justify-content: center;
 }
 
-form fieldset .input-container.active-field {
+form fieldset .input-container.active {
     border: 1px solid rgba(38, 38, 38, 0.5);
 }
 
