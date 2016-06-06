@@ -51,13 +51,19 @@ header .container nav ul li a {
 
 .hero .signup h1 {
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 0px;
 }
 
 .hero .signup p {
     text-align: center;
     margin: 20px;
+}
+
+.hero .signup p.motto {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
 .hero .signup form {
