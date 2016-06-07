@@ -11,6 +11,18 @@ p {
     text-align: center;
 }
 
+.signup {
+    text-align: center;
+}
+
+.signup form {
+    margin-top: 50px;
+}
+
+.signup form .field {
+    text-align: left;
+}
+
 .signup form .call-to-action div p {
     font-size: 0.8em;
     color: rgba(38, 38, 38, 1);
@@ -19,6 +31,10 @@ p {
 .signup form .call-to-action div p a {
     text-decoration: none;
     color: #4776E6;
+}
+
+.signup form .call-to-action button.btn {
+    margin-top: 20px;
 }
 
 footer a {
@@ -103,7 +119,6 @@ footer a:hover {
     .signup form .call-to-action button.btn {
         width: 100%;
         margin-top: 0px;
-
     }
 
     .signup form .call-to-action div p {

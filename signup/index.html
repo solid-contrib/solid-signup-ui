@@ -19,42 +19,32 @@
                         <p class="motto">
                             Sign up with Solid to get started.
                         </p>
-                        <form class="" action="" method="post">
+                        <form id="form" class="" action="" method="post">
                             <fieldset>
                             <div class="fields-container">
                                 <div class="field">
                                     <label for="">Pick a username</label>
-                                        <input class="success" type="text" name="name" placeholder="Username" value="">
-
+                                    <input class="success" type="text" name="username" placeholder="Username" value="">
                                 </div>
                                 <div class="field">
                                     <label for="">Enter your full name</label>
-                                    <div class="input-container">
-                                        <input type="text" name="name" placeholder="Full Name" value="">
-                                        <div class="input-status">
-                                        </div>
-                                    </div>
+                                    <input type="text" name="name" placeholder="Full Name" value="">
                                 </div>
                                 <div class="field">
                                     <label for="">Enter your email</label>
-                                    <div class="input-container">
-                                        <input type="email" name="name" placeholder="Email" value="">
-                                        <div class="input-status">
-                                        </div>
-                                    </div>
+                                    <input type="email" name="email" placeholder="Email" value="">
                                 </div>
                                 <div class="field">
                                     <label for="">Create a password</label>
-                                    <div class="input-container">
-                                        <input type="password" name="name" placeholder="Password" value="">
-                                        <div class="input-status">
-                                        </div>
-                                    </div>
+                                    <input type="password" name="password" placeholder="Password" value="">
                                 </div>
                             </div>
                             </fieldset>
+                            <div class="error-box">
+                                
+                            </div>
                             <div class="call-to-action">
-                                <div><button class="btn" type="submit" name="button">Sign Up</button></div>
+                                <div><button id="sign-up-btn" class="btn" type="submit" name="button">Sign Up</button></div>
                                 <div>
                                     <p>
                                         Already have an account? <a href="/signin">Sign In</a>.
@@ -73,6 +63,6 @@
                 </p>
             </div>
         </footer>
-        <script type="text/javascript" src="../assets/js/app.js"></script>
+        <script type="text/javascript" src="../assets/js/signup.js"></script>
     </body>
 </html>

@@ -43,7 +43,7 @@ form fieldset input {
 form fieldset input.success {
     background-image: url('../images/success.svg');
     background-repeat: no-repeat;
-    background-size: 18px 18px;
+    background-size: 15px 15px;
     background-position: calc(100% - 10px);
 }
 
