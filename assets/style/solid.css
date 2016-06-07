@@ -43,16 +43,38 @@ form fieldset input {
 form fieldset input.success {
     background-image: url('../images/success.svg');
     background-repeat: no-repeat;
-    background-size: 15px 15px;
+    background-size: 18px 18px;
+    background-position: calc(100% - 10px);
+}
+
+form fieldset input.warning {
+    background-image: url('../images/warning.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
     background-position: calc(100% - 10px);
 }
 
 form fieldset input.error {
-    border: 1px solid #FF1744;
+    background-image: url('../images/error.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: calc(100% - 10px);
 }
 
 form fieldset input:focus {
     border: 1px solid rgba(38, 38, 38, 0.5);
+}
+
+form fieldset input.success:focus {
+    border: 1px solid #00E676;
+}
+
+form fieldset input.warning:focus {
+    border: 1px solid #EF6C00;
+}
+
+form fieldset input.error:focus {
+    border: 1px solid #FF1744;
 }
 
 form fieldset .input-container {
