@@ -1,183 +1,90 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Solid Signup</title>
+        <title>Solid</title>
         <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="theme-color" content="#8E54E9">
-        <meta name="apple-mobile-web-app-status-bar-style" content="#8E54E9">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,100,300,700,900' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="assets/css/swiper.min.css">
-        <link rel="stylesheet" href="assets/css/solid-theme.css">
-        <link rel="stylesheet" href="assets/css/solid-signup.css">
-        <link rel="stylesheet" href="assets/css/solid-onboarding.css">
+        <meta name="theme-color" content="#FE8069">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#FE8069">
+        <link rel="stylesheet" href="assets/style/solid.css">
+        <link rel="stylesheet" href="assets/style/solid-www.css">
         <link rel="manifest" href="manifest.json">
     </head>
     <body>
+        <header>
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Developers</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
         <main>
-            <section id="sign-up" class="sign-up">
-
-                <div class="sign-up-wrapper">
-                    <h1>Sign Up</h1>
-                    <div id="successbox">
-                      <div class="icon-success svg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="72px" height="72px">
-                          <g fill="none" stroke="#43C47A" stroke-width="2">
-                            <circle cx="36" cy="36" r="35" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
-                            <path d="M17.417,37.778l9.93,9.909l25.444-25.393" style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path>
-                          </g>
-                        </svg>
-                      </div>
-                      <h2>Success!</h2>
-                      <button type="button" id="account-btn" class="button">Take me to my account</button>
-                    </div>
-                    <ul id="errorbox"></ul>
-                    <form id="form">
-                        <fieldset id="fields">
-                            <div class="field">
-                                <div class="field-icon">
-                                    <img src="assets/img/username-icon.png" height="60" alt="">
-                                </div>
-                                <div class="field-content">
-                                    <label for="">Username</label>
-                                    <input type="text" name="username" class="lower" placeholder="john23" value="" required>
-                                </div>
-                                <div id="username-field-status" class="field-status"></div>
-                            </div>
-                            <div class="field">
-                                <div class="field-icon">
-                                    <img src="assets/img/profile-icon1.png" height="60" alt="">
-                                </div>
-                                <div class="field-content">
-                                    <label for="">Your name</label>
-                                    <input type="text" name="name" placeholder="John Doe" value="" required>
-                                </div>
-                                <div id="name-field-status" class="field-status"></div>
-                            </div>
-                            <div class="field">
-                                <div class="field-icon">
-                                    <img src="assets/img/email-icon.png" height="60" alt="">
-                                </div>
-                                <div class="field-content">
-                                    <label for="">Email address</label>
-                                    <input type="email" name="email" class="lower" placeholder="john@example.com" value="" required>
-                                </div>
-                                <div id="email-field-status" class="field-status"></div>
-                            </div>
-                            <div class="field">
-                                <div class="field-icon">
-                                    <img src="assets/img/password-icon1.png" height="60" alt="">
-                                </div>
-                                <div class="field-content">
-                                    <label for="">Password <span id="strength"></span></label>
-                                    <input type="password" name="password" placeholder="password" value="" required>
-                                </div>
-                                <div id="password-field-status" class="field-status"></div>
-                            </div>
-                        </fieldset>
-                        <button type="button" id="sign-up-btn" class="disabled">Sign up</button>
-                        <p>
-                          <small>Already have an account? <a href="#" id="signin">Sign In</a></small>
+            <section class="hero">
+                <div class="container">
+                    <div class="signup">
+                        <img src="assets/images/solid_logo_color.svg" height="65" alt="">
+                        <h1>Solid</h1>
+                        <p class="motto">
+                            Sign up with Solid to get started.
                         </p>
-                    </form>
-                </div>
-
-                <div class="learn-more">
-                    <div class="swiper-container learn-more-swiper-container onboarding-container">
-                        <div class="swiper-wrapper onboarding-wrapper">
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/own-your-data3.png" height="250" alt="">
-                                <h2>Own your data</h2>
-                                <p>
-                                    With Solid, you're in control of your data; you decide where to keep it and who gets to see it.
-                                </p>
+                        <form class="" action="" method="post">
+                            <fieldset>
+                            <div class="fields-container">
+                                <div class="field">
+                                    <label for="">Pick a username</label>
+                                    <div class="input-container">
+                                        <input type="text" name="name" placeholder="Username" value="">
+                                        <div class="input-status">
+                                            <img src="assets/images/success.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="">Enter your full name</label>
+                                    <div class="input-container">
+                                        <input type="text" name="name" placeholder="Full Name" value="">
+                                        <div class="input-status">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="">Enter your email</label>
+                                    <div class="input-container">
+                                        <input type="email" name="name" placeholder="Email" value="">
+                                        <div class="input-status">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="">Create a password</label>
+                                    <div class="input-container">
+                                        <input type="password" name="name" placeholder="Password" value="">
+                                        <div class="input-status">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/customized-experience.png" height="200" alt="">
-                                <h2>Use Any App You Like</h2>
-                                <p>
-                                    Solid data is separate from the apps that use it; switch between apps and keep your data.
-                                </p>
+                            </fieldset>
+                            <div class="call-to-action">
+                                <div><button id="" class="btn" type="submit" name="button">Sign Up</button></div>
+                                <div>
+                                    <p>
+                                        Already have an account? <a href="/signin">Sign In</a>.
+                                    </p>
+                                </div>
                             </div>
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/customized-experience.png" height="200" alt="">
-                                <h2>Let Data be Free</h2>
-                                <p>
-                                    Free in the sense of freedom! Free yourself from repeated data entry; reuse your data across Solid apps.
-                                </p>
-                            </div>
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/customized-experience.png" height="200" alt="">
-                                <p>
-                                    Let's hear the Solid team describe what makes Solid so exciting.
-                                </p>
-                            </div>
-                        </div>
-                        <div id="onboarding-control-panel" class="onboarding-control-panel">
-                            <div class="swiper-pagination steps"></div>
-                        </div>
+                        </form>
+                    </div>
+                    <div class="intro">
                     </div>
                 </div>
             </section>
+            <section class="test-class">
 
-            <section id="onboarding" class="onboarding">
-                <div class="overlay">
-                    <div id="swiper-onboarding" class="swiper-container onboarding-container">
-                        <div class="swiper-wrapper onboarding-wrapper">
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/solid-logo.png" height="220" alt="">
-                                <h1>Hi there, <br> Welcome to Solid!</h1>
-                                <p>
-                                     Learn about Solid apps and data storage solutions. (Or, skip ahead to get started.)
-                                </p>
-                            </div>
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/own-your-data3.png" height="250" alt="">
-                                <h2>Own your data</h2>
-                                <p>
-                                    With Solid, you're in control of your data; you decide where to keep it and who gets to see it.
-                                </p>
-                            </div>
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/customized-experience.png" height="200" alt="">
-                                <h2>Use Any App You Like</h2>
-                                <p>
-                                    Solid data is separate from the apps that use it; switch between apps and keep your data.
-                                </p>
-                            </div>
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/customized-experience.png" height="200" alt="">
-                                <h2>Let Data be Free</h2>
-                                <p>
-                                    Free in the sense of freedom! Free yourself from repeated data entry; reuse your data across Solid apps.
-                                </p>
-                            </div>
-                            <div class="swiper-slide onboarding-card">
-                                <img src="assets/img/customized-experience.png" height="200" alt="">
-                                <h2>You're almost there...</h2>
-                                <p>
-                                    Let's hear the Solid team describe what makes Solid so exciting.
-                                </p>
-                                <p class="sign-up">
-                                    <button id="gotit-btn" class="control-btn" type="button" name="done">Got it</button>
-                                </p>
-                            </div>
-                        </div>
-                        <div id="onboarding-control-panel" class="onboarding-control-panel">
-                            <p><button id="control-btn-skip" class="control-btn" type="button" name="skip">skip</button></p>
-                            <div class="swiper-pagination steps"></div>
-                            <p><button id="control-btn-next" class="control-btn" type="button" name="next">next</button></p>
-                            <button id="control-btn-done" class="control-btn" type="button" name="done">got it</button>
-                        </div>
-                    </div>
-                </div>
             </section>
-
         </main>
-
-
-
-        <script src="assets/js/swiper.min.js"></script>
-        <script src="assets/js/app.js"></script>
     </body>
 </html>
