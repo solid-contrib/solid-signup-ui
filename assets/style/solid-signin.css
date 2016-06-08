@@ -11,29 +11,29 @@ p {
     text-align: center;
 }
 
-.signup {
+.signin {
     text-align: center;
 }
 
-.signup form {
+.signin form {
     margin-top: 50px;
 }
 
-.signup form .field {
+.signin form .field {
     text-align: left;
 }
 
-.signup form .call-to-action div p {
+.signin form .call-to-action div p {
     font-size: 0.9em;
     color: rgba(38, 38, 38, 1);
 }
 
-.signup form .call-to-action div p a {
+.signin form .call-to-action div p a {
     text-decoration: none;
     color: #4776E6;
 }
 
-.signup form .call-to-action button.btn {
+.signin form .call-to-action button.btn {
     margin-top: 20px;
 }
 
@@ -49,7 +49,7 @@ footer a:hover {
 }
 
 @media (min-width: 400px) {
-    .signup {
+    .signin {
         max-width: 400px;
         margin: auto;
     }
@@ -64,51 +64,53 @@ footer a:hover {
         justify-content: space-between;
     }
 
-    .signup {
+    .signin {
         max-width: 960px;
         margin: auto;
         margin-top: 100px;
         text-align: center;
     }
 
-    .signup .container {
+    .signin .container {
         height: 100%;
 
     }
 
-    .signup form {
-        max-width: 550px;
+    .signin form {
+        max-width: 380px;
         margin: 50px auto 0px auto;
         text-align: center;
     }
 
-    .signup form fieldset .fields-container {
+    .signin form fieldset .fields-container {
         width: 100%;
         display: flex;
         flex-flow: row wrap;
     }
 
-    .signup form fieldset .field {
-        width: 50%;
+    .signin form fieldset .field {
+        width: 100%;
         display: flex;
         flex-flow: column;
         padding: 0px 10px 0px 10px;
         box-sizing: border-box;
     }
 
-    .signup form fieldset .field label {
+    .signin form fieldset .field label {
         text-align: left;
     }
 
-    .signup form .call-to-action {
+    .signin form .call-to-action {
         width: 100%;
         display: flex;
-        flex-flow: row;
+        flex-flow: column;
         margin-top: 20px;
+        text-align: center;
+
     }
 
-    .signup form .call-to-action div {
-        width: 50%;
+    .signin form .call-to-action div {
+        width: 100%;
         padding: 0px 10px 0px 10px;
         box-sizing: border-box;
         display: flex;
@@ -116,13 +118,14 @@ footer a:hover {
         align-items: center;
     }
 
-    .signup form .call-to-action button.btn {
+    .signin form .call-to-action button.btn {
         width: 100%;
         margin-top: 0px;
     }
 
-    .signup form .call-to-action div p {
-        text-align: left;
+    .signin form .call-to-action div p {
+        width: 100%;
+        text-align: center;
     }
 
 }
