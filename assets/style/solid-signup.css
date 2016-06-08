@@ -13,6 +13,7 @@ p {
 
 .signup {
     text-align: center;
+    margin-top: 50px;
 }
 
 .signup form {
@@ -37,6 +38,10 @@ p {
     margin-top: 20px;
 }
 
+footer {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
 footer a {
     text-decoration: none;
     font-size: 0.8em;
@@ -52,6 +57,7 @@ footer a:hover {
     .signup {
         max-width: 400px;
         margin: auto;
+        margin-top: 50px;
     }
 }
 
