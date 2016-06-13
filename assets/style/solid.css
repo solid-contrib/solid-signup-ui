@@ -135,3 +135,16 @@ form fieldset .input-container > .input-status > img {
     font-weight: 500;
     cursor: pointer;
 }
+
+.btn.disabled {
+    width: 100%;
+    border: 1px solid rgba(38,38,38,0.3);
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 15px 15px 15px 15px;
+    box-shadow: none;
+    font-size: 1em;
+    color: rgba(38,38,38,0.5);
+    font-weight: 500;
+    cursor: default;
+}
