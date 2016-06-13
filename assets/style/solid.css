@@ -33,11 +33,12 @@ form fieldset input {
     margin: 10px auto 15px auto;
     border-radius: 3px;
     border: 1px solid rgba(38, 38, 38, 0.1);
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: 400;
     color: rgba(38, 38, 38, 1);
     outline: none;
     box-sizing: border-box;
+    background: none;
 }
 
 form fieldset input.success {
@@ -124,9 +125,9 @@ form fieldset .input-container > .input-status > img {
 
 .btn {
     width: 100%;
-    border: 1px solid #5B56D2;
+    border: 1px solid #5764C6;
     border-radius: 3px;
-    background-color: #5B56D2;
+    background-color: #5764C6;
     padding: 15px 15px 15px 15px;
     box-shadow: none;
     font-size: 1em;

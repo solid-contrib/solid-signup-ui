@@ -74,17 +74,17 @@
     var username = document.getElementsByName('username')[0].value
 
     if (username.length === 0) {
-      clearError('username-field-status')
+      clearError('username')
     } else {
       if (username.indexOf('-') === 0 ||
        username.lastIndexOf('-') === username.length - 1 ||
        dash.test(username) ||
        !re.test(username)) {
-        notValid('username-field-status',
+        notValid('username',
           'Only letters, numbers and single dash characters are allowed for usernames'
           )
       } else {
-        isValid('username-field-status')
+        isValid('username')
         checkUsername(username)
       }
     }
@@ -99,9 +99,10 @@
 
     var name = document.getElementsByName('name')[0].value
     if (name.length === 0) {
-      clearError('name-field-status')
+      clearError('name')
+      clearSuccess('name')
     } else {
-      isValid('name-field-status')
+      isValid('name')
       nameOK = true
     }
     allOK()
@@ -115,13 +116,16 @@
 
     var email = document.getElementsByName('email')[0].value
     if (email.length === 0) {
-      clearError('email-field-status')
+      clearError('email')
+      clearSuccess('email')
     } else {
       var re = /^(([^<>()\[\]\.,;:\s@\']+(\.[^<>()\[\]\.,;:\s@\']+)*)|(\'.+\'))@(([^<>()[\]\.,;:\s@\']+\.)+[^<>()[\]\.,;:\s@\']{2,})$/i
       if (!re.test(email)) {
-        notValid('email-field-status')
+        notValid('email')
       } else {
-        isValid('email-field-status')
+        console.log('cest good')
+        clearError('email')
+        isValid('email')
         emailOK = true
       }
     }
@@ -139,9 +143,9 @@
     var strength = document.getElementById('strength')
     if (password.value.length === 0) {
       strength.innerHTML = ''
-      clearError('password-field-status')
+      clearError('password')
     } else if (password.value.length < 8) {
-      notValid('password-field-status')
+      notValid('password')
       strength.innerHTML = '(too short)'
       strength.style.color = '#F44336'
     } else {
@@ -157,7 +161,7 @@
         strength.innerHTML = '(weak)'
         strength.style.color = '#E0571E'
       }
-      isValid('password-field-status')
+      isValid('password')
       passOK = true
     }
     allOK()
@@ -173,14 +177,14 @@
           userOK = false
           if (this.status === 0) {
             // disconnected
-            notValid('username-field-status',
+            notValid('username',
               'Could not connect to server on ' + url
               )
           } else if (this.status === 404) {
-            isValid('username-field-status')
+            isValid('username')
             userOK = true
           } else {
-            notValid('username-field-status',
+            notValid('username',
               'Username taken! Try another one or <a href="' +
               SIGNIN_LINK + '">sign in</a>.'
               )
@@ -251,7 +255,7 @@
   }
 
   var clearError = function (elemId) {
-    document.getElementById(elemId).innerHTML = ''
+    document.getElementsByName(elemId)[0].className = document.getElementsByName(elemId)[0].className.replace('error', '')
     var errorBox = document.getElementById('errorbox')
     var errElem = document.getElementById(elemId + '-error')
     if (errElem) {
@@ -262,16 +266,24 @@
     }
   }
 
-  var isValid = function (elemId) {
-    clearError(elemId)
-    document.getElementById(elemId).innerHTML = '<img src="assets/img/ok-status.svg" height="15" alt="">'
+  var clearSuccess = function (elemName) {
+    document.getElementsByName(elemName)[0].className = document.getElementsByName(elemName)[0].className.replace('success', '')
   }
 
-  var notValid = function (elemId, msg) {
-    var parent = document.getElementById(elemId)
-    parent.innerHTML = '<img src="assets/img/not-ok-status.svg" height="15" alt="">'
+  var isValid = function (elemName) {
+    clearError(elemName)
+    if(document.getElementsByName(elemName)[0].className.indexOf('success') === -1) {
+      document.getElementsByName(elemName)[0].className += ' success'
+    }
+  }
+
+  var notValid = function (elemName, msg) {
+    clearSuccess(elemName)
+    if(document.getElementsByName(elemName)[0].className.indexOf('error') === -1) {
+      document.getElementsByName(elemName)[0].className += ' error'
+    }
     if (msg) {
-      var errId = elemId + '-error'
+      var errId = elemName + '-error'
       var errorBox = document.getElementById('errorbox')
       errorBox.style.display = 'block'
       var errElem = document.getElementById(errId)
