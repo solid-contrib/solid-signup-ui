@@ -123,6 +123,10 @@ form fieldset .input-container > .input-status > img {
     width: 15px;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
 .btn {
     width: 100%;
     border: 1px solid #5764C6;
