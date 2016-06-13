@@ -36,7 +36,7 @@
 
   var userOK, nameOK, emailOK, passOK
 
-  /*var myswiper = new window.Swiper('#swiper-onboarding', {
+  /* var myswiper = new window.Swiper('#swiper-onboarding', {
     pagination: '.swiper-pagination',
     paginationClickable: true,
     allowSwipeToPrev: true
@@ -50,11 +50,11 @@
 
   // get elements
   var successbox = document.getElementById('info-box')
-  //var nextBtn = document.getElementById('control-btn-next')
-  //var skipBtn = document.getElementById('control-btn-skip')
+  // var nextBtn = document.getElementById('control-btn-next')
+  // var skipBtn = document.getElementById('control-btn-skip')
   var form = document.getElementById('form')
   var fields = document.getElementById('fields')
-  //var gotitBtn = document.getElementById('gotit-btn')
+  // var gotitBtn = document.getElementById('gotit-btn')
   var signupBtn = document.getElementById('sign-up-btn')
   var accountBtn = document.getElementById('account-btn')
   var userField = document.getElementsByName('username')[0]
@@ -272,14 +272,14 @@
 
   var isValid = function (elemName) {
     clearError(elemName)
-    if(document.getElementsByName(elemName)[0].className.indexOf('success') === -1) {
+    if (document.getElementsByName(elemName)[0].className.indexOf('success') === -1) {
       document.getElementsByName(elemName)[0].className += ' success'
     }
   }
 
   var notValid = function (elemName, msg) {
     clearSuccess(elemName)
-    if(document.getElementsByName(elemName)[0].className.indexOf('error') === -1) {
+    if (document.getElementsByName(elemName)[0].className.indexOf('error') === -1) {
       document.getElementsByName(elemName)[0].className += ' error'
     }
     if (msg) {
@@ -334,7 +334,7 @@
   // }
 
   // add event listeners
-  /*nextBtn.addEventListener('click', function () {
+  /* nextBtn.addEventListener('click', function () {
     myswiper.slideNext(false, 300)
   }, false)
 
