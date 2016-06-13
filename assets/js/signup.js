@@ -139,7 +139,7 @@
     }
     passOK = false
 
-    // check password strength
+    // check password strength (min length is 8 chars)
     var password = document.getElementsByName('password')[0]
     var strength = document.getElementById('strength')
     if (password.value.length === 0) {
@@ -202,11 +202,13 @@
     var username = document.getElementsByName('username')[0].value
     var name = document.getElementsByName('name')[0].value
     var email = document.getElementsByName('email')[0].value
+    var password = document.getElementsByName('password')[0].value
     if (username.length > 0) {
       fields.setAttribute('disabled', true)
       signupBtn.classList.add('disabled')
       var url = makeURI(username) + ACCOUNT_ENDPOINT
-      var data = 'username=' + username + '&email=' + email + '&name=' + name
+      var data = 'username=' + username + '&email=' + email + '&name=' + name +
+                  '&password=' + password
       var http = new window.XMLHttpRequest()
       http.open('POST', url)
       http.withCredentials = true
