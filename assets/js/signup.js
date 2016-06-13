@@ -36,18 +36,6 @@
 
   var userOK, nameOK, emailOK, passOK
 
-  /* var myswiper = new window.Swiper('#swiper-onboarding', {
-    pagination: '.swiper-pagination',
-    paginationClickable: true,
-    allowSwipeToPrev: true
-  })
-
-  window.Swiper('.learn-more-swiper-container', {
-    pagination: '.swiper-pagination',
-    paginationClickable: true,
-    autoplay: 5000
-})*/
-
   // get elements
   var successbox = document.getElementById('successbox')
   var signupElement = document.getElementById('signup')
@@ -57,7 +45,7 @@
   var fields = document.getElementById('fields')
   // var gotitBtn = document.getElementById('gotit-btn')
   var signupBtn = document.getElementById('sign-up-btn')
-  var accountBtn = document.getElementById('account-btn')
+  var finishBtn = document.getElementById('finish-btn')
   var userField = document.getElementsByName('username')[0]
   var nameField = document.getElementsByName('name')[0]
   var emailField = document.getElementsByName('email')[0]
@@ -223,16 +211,16 @@
               showElement(successbox)
               // see if we have to redirect
               var origin = queryVals['origin']
+              console.log(finishBtn)
               if (origin) {
-                accountBtn.innerHTML = 'Take me back to the app'
-                accountBtn.addEventListener('click', function () {
+                finishBtn.innerHTML = 'Take me back to the app'
+                finishBtn.addEventListener('click', function () {
                   window.location.replace(origin)
                 }, false)
                 // redirect back to app
                 returnToApp(webid, origin)
               } else {
-                accountBtn.innerHTML = 'Take me to my Solid dashboard'
-                accountBtn.addEventListener('click', function () {
+                finishBtn.addEventListener('click', function () {
                   window.location.replace(makeURI(username))
                 }, false)
               }
