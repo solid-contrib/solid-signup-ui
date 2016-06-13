@@ -75,6 +75,7 @@
 
     if (username.length === 0) {
       clearError('username')
+      clearSuccess('username')
     } else {
       if (username.indexOf('-') === 0 ||
        username.lastIndexOf('-') === username.length - 1 ||
@@ -144,6 +145,7 @@
     if (password.value.length === 0) {
       strength.innerHTML = ''
       clearError('password')
+      clearSuccess('password')
     } else if (password.value.length < 8) {
       notValid('password')
       strength.innerHTML = '(too short)'
