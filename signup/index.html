@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Solid</title>
-        <meta charset="utf-8">
+      <title>Solid</title>
+      <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="theme-color" content="#FE8069">
-        <meta name="apple-mobile-web-app-status-bar-style" content="#FE8069">
-        <link rel="stylesheet" href="../assets/style/solid.css">
-        <link rel="stylesheet" href="../assets/style/solid-signup.css">
-        <link rel="manifest" href="manifest.json">
+      <meta name="theme-color" content="#FE8069">
+      <meta name="apple-mobile-web-app-status-bar-style" content="#FE8069">
+      <link rel="stylesheet" href="../assets/style/solid.css">
+      <link rel="stylesheet" href="../assets/style/solid-signup.css">
+      <link rel="manifest" href="manifest.json">
     </head>
     <body>
         <main>
-            <section  class="signup">
+            <section class="signup">
                 <div class="container">
                         <img src="../assets/images/solid_logo_color.svg" height="65" alt="">
                         <h1>Solid</h1>
-                        <p class="motto">
-                            Sign up with Solid to get started.
-                        </p>
-                        <form id="form" autocomplete="off">
-                            <fieldset id="fields">
-                            <div class="fields-container">
-                                <div class="field">
-                                    <label for="">Pick a username</label>
-                                    <input type="text" name="username" placeholder="Username" value="">
-                                </div>
-                                <div class="field">
-                                    <label for="">Enter your full name</label>
-                                    <input type="text" name="name" placeholder="Full Name" value="">
-                                </div>
-                                <div class="field">
-                                    <label for="">Enter your email</label>
-                                    <input type="email" name="email" placeholder="Email" value="">
-                                </div>
-                                <div class="field">
-                                    <label for="">Create a password <span id="strength"></span></label>
-                                    <input type="password" name="password" placeholder="Password" value="">
-                                </div>
-                            </div>
-                            </fieldset>
-                            <div id="errorbox" class="info-box">
-
-                            </div>
-                            <div class="call-to-action">
-                                <div><button  type="button" id="sign-up-btn" class="btn disabled">Sign Up</button></div>
-                                <div>
-                                    <p>
-                                        Already have an account? <a href="/signin">Sign In</a>.
-                                    </p>
-                                </div>
-                            </div>
-                        </form>
+                        <div id="signup">
+                          <p class="motto">
+                              Sign up with Solid to get started.
+                          </p>
+                          <form id="form" autocomplete="off">
+                              <fieldset id="fields">
+                              <div class="fields-container">
+                                  <div class="field">
+                                      <label for="">Pick a username</label>
+                                      <input type="text" name="username" placeholder="Username" value="">
+                                  </div>
+                                  <div class="field">
+                                      <label for="">Enter your full name</label>
+                                      <input type="text" name="name" placeholder="Full Name" value="">
+                                  </div>
+                                  <div class="field">
+                                      <label for="">Enter your email</label>
+                                      <input type="email" name="email" placeholder="Email" value="">
+                                  </div>
+                                  <div class="field">
+                                      <label for="">Create a password <span id="strength"></span></label>
+                                      <input type="password" name="password" placeholder="Password" value="">
+                                  </div>
+                              </div>
+                              </fieldset>
+                              <div id="errorbox" class="info-box"></div>
+                              <div class="call-to-action">
+                                  <div><button  type="button" id="sign-up-btn" class="btn disabled">Sign Up</button></div>
+                                  <div>
+                                      <p>
+                                          Already have an account? <a href="/signin">Sign In</a>.
+                                      </p>
+                                  </div>
+                              </div>
+                          </form>
+                        </div>
+                        <div id="successbox" class="icon-success svg text-center hidden">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="72px" height="72px">
+                            <g fill="none" stroke="#43C47A" stroke-width="2">
+                              <circle cx="36" cy="36" r="35" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
+                              <path d="M17.417,37.778l9.93,9.909l25.444-25.393" style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path>
+                            </g>
+                          </svg>
+                          <h4 class="green">Success!</h4>
+                        </div>
                     </div>
             </section>
         </main>

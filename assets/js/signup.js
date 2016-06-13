@@ -49,7 +49,8 @@
 })*/
 
   // get elements
-  var successbox = document.getElementById('info-box')
+  var successbox = document.getElementById('successbox')
+  var signupElement = document.getElementById('signup')
   // var nextBtn = document.getElementById('control-btn-next')
   // var skipBtn = document.getElementById('control-btn-skip')
   var form = document.getElementById('form')
@@ -64,7 +65,7 @@
   // var onboardingControlPanel = document.getElementById('onboarding-control-panel')
 
   var validateUsername = function (e) {
-    if (e.which === 9) {
+    if (e && e.which === 9) {
       return
     }
     userOK = false
@@ -93,7 +94,7 @@
   }
 
   var validateName = function (e) {
-    if (e.which === 9) {
+    if (e && e.which === 9) {
       return
     }
     nameOK = false
@@ -110,7 +111,7 @@
   }
 
   var validateEmail = function (e) {
-    if (e.which === 9) {
+    if (e && e.which === 9) {
       return
     }
     emailOK = false
@@ -124,7 +125,6 @@
       if (!re.test(email)) {
         notValid('email')
       } else {
-        console.log('cest good')
         clearError('email')
         isValid('email')
         emailOK = true
@@ -134,7 +134,7 @@
   }
 
   var validatePass = function (e) {
-    if (e.which === 9) {
+    if (e && e.which === 9) {
       return
     }
     passOK = false
@@ -219,8 +219,8 @@
             var webid = this.getResponseHeader('User')
             if (webid && webid.length > 0) {
               // all done
-              form.style.display = 'none'
-              successbox.style.display = 'flex'
+              hideElement(signupElement)
+              showElement(successbox)
               // see if we have to redirect
               var origin = queryVals['origin']
               if (origin) {
@@ -300,6 +300,18 @@
     }
   }
 
+  var hideElement = function (elem) {
+    if (elem) {
+      elem.classList.add('hidden')
+    }
+  }
+
+  var showElement = function (elem) {
+    if (elem) {
+      elem.classList.remove('hidden')
+    }
+  }
+
   var makeURI = function (username) {
     if (username.length > 0) {
       return accURL.schema + username + '.' + accURL.host
@@ -367,4 +379,10 @@
   emailField.addEventListener('input', validateEmail, false)
 
   passField.addEventListener('input', validatePass, false)
+
+  // Validate fields on page load
+  validateUsername()
+  validateName()
+  validateEmail()
+  validatePass()
 })()
