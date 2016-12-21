@@ -1,6 +1,6 @@
 (function () {
   var DOMAIN = 'https://databox2.com'
-  var SIGNIN_LINK = 'https://databox2.com/sigin/'
+  var SIGNIN_LINK = 'https://databox2.com/signin/'
   var ACCOUNT_ENDPOINT = 'api/accounts/new'
 
   var accURL = {}
